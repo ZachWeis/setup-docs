@@ -28,6 +28,20 @@ Sets the name/identifier of the switch in Global Configuration mode.
 
     hostname [name]
 
+Set a console password.
+
+    line console 0
+    password [YourConsolePassword]
+    login
+    exit
+
+Set VTY Lines
+
+    line vty 0 15
+    password [SSHpassword]
+    login
+    exit
+    
 Sets an encrypted password for entering Privileged EXEC mode.
 
     enable secret [password]
@@ -35,6 +49,10 @@ Sets an encrypted password for entering Privileged EXEC mode.
 Encrypts all plaintext passwords stored in the configuration file.
 
     service password-encryption
+
+MOTD
+
+    banner motd "MOTD"
 
 Saves your active RAM configuration into NVRAM so it survives a reboot.
 
@@ -267,3 +285,7 @@ Global Configuration Mode	Switch(config)#	Changing system-wide device settings (
 Interface Configuration Mode	Switch(config-if)#	Configuring specific ports/interfaces (entered via interface [type] [number]).
 
 
+
+no ip domain-lookup
+
+Switch# show ip interface brief
